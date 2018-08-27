@@ -6,50 +6,50 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CreateOutput {
-
-	public CreateOutput(String outFile)	{
+	
+	
+	public static boolean now(String outFile, String mycontent)	{
 		
 		BufferedWriter bw = null;
-	      try {
-		 String mycontent = "This String would be written" +
-		    " to the specified File";
-	         //Specify the file name and path here
-		 File file = new File(outFile);
+		//FileWriter fw;
+	      
+		try {
+			
+			File file = new File(outFile);
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+			
 
-		 /* This logic will make sure that the file 
-		  * gets created if it is not present at the
-		  * specified location*/
-		  if (!file.exists()) {
-		     file.createNewFile();
-		  }
-
-		  FileWriter fw = new FileWriter(file);
-		  bw = new BufferedWriter(fw);
-		  bw.write(mycontent);
-	          System.out.println("File written Successfully");
-
-	      } catch (IOException ioe) {
-		   ioe.printStackTrace();
+			FileWriter fw = new FileWriter(file,true);
+			bw = new BufferedWriter(fw);
+			bw.write(mycontent); 
+			//bw.append("\n" + mycontent);    
+			//System.out.println("File written Successfully");
+			return true;
 		}
-		finally
-		{ 
-		   try{
-		      if(bw!=null)
-			 bw.close();
-		   }catch(Exception ex){
-		       System.out.println("Error in closing the BufferedWriter"+ex);
-		    }
+		catch (IOException ioe) {
+			System.out.println(ioe.getMessage() );
+			return false;
 		}
-		
-		
+		finally	{
+			try{
+				if(bw != null)	{
+					bw.close();
+				}
+				//if(fw != null)	{
+				//	fw.close();
+				//}
+			}catch(Exception e){
+					System.out.println("Error in closing BufferedWriter");
+			}
+		}
 	}
-	
-	
-	//public void 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		//CreateOutput.now("result.txt","Yes yes yes");
+		
 	}
 
 }

@@ -23,7 +23,7 @@ public class AmazonReviews {
 			dsi.moviesWithMaxReviews();
 			dsi.moviesWithMaxRevScore();
 			/////
-			new CreateOutput(args[3]);
+			CreateOutput.now(args[3],dsi.getCreateContent());
 			
 		}
 		else	{
