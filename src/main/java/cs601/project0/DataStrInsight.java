@@ -35,7 +35,7 @@ public class DataStrInsight {
 
 
 
-	public void usersWithMaxReviews()	{
+	void usersWithMaxReviews()	{
 		HashMap<String, Integer> userRevCount = DataStr.getUserRevCount();
 		int maxUserRevCount = DataStr.getMaxUserRevCount();
 		ArrayList<String> users = new ArrayList<String>();
@@ -57,7 +57,7 @@ public class DataStrInsight {
 	
 	//Product IDs of the products with the largest number of reviews (field product/productId)
 	//-------productId -> no of reviews
-	public void moviesWithMaxReviews()	{
+	void moviesWithMaxReviews()	{
 		HashMap<String, Integer> movieRevCount = DataStr.getMovieRevCount();
 		int maxMovieRevCount = DataStr.getMaxMovieRevCount();
 		ArrayList<String> movies = new ArrayList<String>();
@@ -82,7 +82,7 @@ public class DataStrInsight {
 	
 	//Product IDs of the products with the highest average score (field product/productId)
 	//-------productId -> avg score
-	public void moviesWithMaxRevScore()	{
+	void moviesWithMaxRevScore()	{
 		HashMap<String, Double> movieRevScore = DataStr.getMovieRevScore();
 		double maxMovieRevScore = 0;
 		ArrayList<String> movies = new ArrayList<String>();

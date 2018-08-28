@@ -35,37 +35,34 @@ public class FileRead {
 	
 	}//closing constructor
 	
-	public void patternMatcher(String thisLine)	{
+	private void patternMatcher(String thisLine)	{
 		//matching the line to check if it is a - productId or userId or score
 		if(thisLine.matches("^product/productId:(.*)"))	{
 			this.productId = getValue(thisLine, "(.*)productId: ");
-			//System.out.println("productId: "+ this.productId );
 		}
 		
 		if(thisLine.matches("^review/userId:(.*)"))	{
 			this.userId = getValue(thisLine, "(.*)userId: ");
-			//System.out.println("userId: "+ this.userId );
 		}
 		
 		if(thisLine.matches("^review/score:(.*)")) {
 			this.score = Double.parseDouble(getValue(thisLine, "(.*)score: "));
-			//System.out.println("score: " + this.score);
 			this.eachReviewSet();
 		}
 		
 	}//closing patternMatcher
 	
 	//method to get values for productId, userId and score
-	public String getValue(String thisLine, String splitWise)	{
+	private String getValue(String thisLine, String splitWise)	{
 		String[] values = thisLine.split(splitWise);
 		return values[1];	
 	}
 	
 	//send values to DataStr class
-	public void eachReviewSet()	{
-		DataStr.editData(this.userId); //null pointer
-		DataStr.editData(this.productId, this.score); //null pointer
-		//(this.productId, this.userId, this.score);
+	private void eachReviewSet()	{
+		//(this.productId, this.userId, this.score)
+		DataStr.editData(this.userId);
+		DataStr.editData(this.productId, this.score);
 	}
 	
 	public static void main(String[] args) {

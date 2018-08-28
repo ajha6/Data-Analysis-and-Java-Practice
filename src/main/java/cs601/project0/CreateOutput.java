@@ -48,7 +48,7 @@ public class CreateOutput {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//CreateOutput.now("result.txt","Yes yes yes");
+		//CreateOutput.now("result.txt","Yes yes");
 		
 	}
 
