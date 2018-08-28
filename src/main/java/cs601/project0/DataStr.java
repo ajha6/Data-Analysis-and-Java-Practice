@@ -53,6 +53,7 @@ public class DataStr {
 			DataStr.userRevCount.put(userId, count);
 		}
 		else	{
+			//adding new user
 			DataStr.userRevCount.put(userId, 1);
 		}
 	}
@@ -82,6 +83,7 @@ public class DataStr {
 			
 		}
 		else	{
+			//adding new movie
 			DataStr.movieRevCount.put(productId, 1);
 			DataStr.movieRevScore.put(productId, score);
 		}
