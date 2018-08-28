@@ -14,6 +14,13 @@ public class FileRead {
 	private double score;
 	
 	//constructor
+	/**
+	 * FileRead reads input file line by line creates;
+	 * Finds productId, userId and related score and sends it to DataStr class to 
+	 * update the records
+	 * 
+	 * @param inputFile
+	 */
 	public FileRead(String inputFile)	{
 		
 		Path path = Paths.get(inputFile);

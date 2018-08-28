@@ -7,7 +7,13 @@ import java.io.IOException;
 
 public class CreateOutput {
 	
-	
+	/**
+	 * The method takes the filename and content as params and generates a file with the 
+	 * specified content
+	 * @param outFile
+	 * @param mycontent
+	 * @return true/false
+	 */
 	public static boolean now(String outFile, String mycontent)	{
 		
 		BufferedWriter bw = null;

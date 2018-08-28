@@ -3,7 +3,12 @@ package cs601.project0;
 public class AmazonReviews {
 
 	//movies.txt: https://snap.stanford.edu/data/web-Movies.html
-	
+	/**
+	 * The program reads movies.txt file, stores and processes data to generate 
+	 * answers in written into another text file.
+	 * 
+	 * @param -input movies.txt -output actual.txt
+	 */
 	public static void main(String[] args) {
 		//TODO: Your code here!
 		//creating check for the arguments 

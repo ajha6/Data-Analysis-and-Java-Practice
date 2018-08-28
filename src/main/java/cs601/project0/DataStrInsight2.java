@@ -16,21 +16,21 @@ import java.util.Map;
 public class DataStrInsight2 {
 		
 		private StringBuilder createContent;
-		
+		//constructor - initializing StringBuilder
 		public DataStrInsight2()	{
 			createContent = new StringBuilder();
 		}
 		
-		
-		
+		//getter
 		public String getCreateContent() {
 			return createContent.toString();
 		}
 
-
-		//User IDs of the users with the largest number of reviews (field review/userId) 
-		//-------userid -> no of reviews
-		
+		/**
+		 * Method to find
+		 *User IDs of the users with the largest number of reviews (field review/userId) 
+		 *-------userid -> no of reviews
+		 */
 		void usersWithMaxReviews()	{
 			
 			HashMap<String, Integer> userRevCount = DataStr.getUserRevCount();
@@ -49,16 +49,20 @@ public class DataStrInsight2 {
 				}
 			}
 			
-			//if(users.size() > 1	) {
-			//	Collections.sort(users);
-			//}
+			if(users.size() > 1	) {
+				Collections.sort(users);
+			}
 			for(String s : users)	{
 				this.createContent.append("\t"+ s +"\n");
 			}
 		}
 		
-		//Product IDs of the products with the largest number of reviews (field product/productId)
-		//-------productId -> no of reviews
+		/** 
+		 * Method to find
+		 * Product IDs of the products with the largest number of reviews (field product/productId)
+		 *-------productId -> no of reviews
+		 */
+		
 		void moviesWithMaxReviews()	{
 			
 			HashMap<String, Integer> movieRevCount = DataStr.getMovieRevCount();
@@ -72,17 +76,20 @@ public class DataStrInsight2 {
 				}
 			}
 			
-			//if(movies.size() > 1)	{
-			//	Collections.sort(movies);
-			//}
+			if(movies.size() > 1)	{
+				Collections.sort(movies);
+			}
 			for(String s : movies)	{
 				this.createContent.append("\t"+ s +"\n");
 			}
 		}
 		
+		/**
+		 * Method to find
+		 * Product IDs of the products with the highest average score (field product/productId)
+		 * -------productId -> avg score
+		 */
 		
-		//Product IDs of the products with the highest average score (field product/productId)
-		//-------productId -> avg score
 		void moviesWithMaxRevScore()	{
 			
 			HashMap<String, Double> movieRevScore = DataStr.getMovieRevScore();
@@ -102,9 +109,9 @@ public class DataStrInsight2 {
 				}
 			}
 			
-			//if(movies.size() > 1)	{
+			if(movies.size() > 1)	{
 				Collections.sort(movies);
-			//}
+			}
 			for(String s : movies)	{
 				this.createContent.append("\t"+ s +"\n");
 			}
